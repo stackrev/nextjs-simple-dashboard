@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'operator';
+    src: url('/fonts/OperatorMono-Medium.eot');
+    src: url('/fonts/OperatorMono-Medium.eot#iefix') format('embedded-opentype'),
+        url('/fonts/OperatorMono-Medium.woff') format('woff'),
+        url('/fonts/OperatorMono-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: operator !important;
+}
