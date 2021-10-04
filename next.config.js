@@ -6,6 +6,7 @@ module.exports = {
         webpack5: true,
     },
     publicRuntimeConfig: {
-        backendUrl: 'https://127.0.0.1:8000/api',
+        apiKey: process.env.API_KEY,
+        apiUrl: process.env.API_BASE_URL,
     },
 };

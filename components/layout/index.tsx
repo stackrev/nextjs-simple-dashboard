@@ -16,7 +16,7 @@ import Avatar from '@material-ui/core/Avatar';
 
 import ImageIcon from '@material-ui/icons/Image';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import PagesSharpIcon from '@material-ui/icons/PagesSharp';
 import LoginIcon from '@material-ui/icons/InputOutlined';
 
 const drawerWidth = 220;
@@ -106,14 +106,14 @@ export default function Layout({ children }) {
                         </ListItem>
                     </Link>
 
-                    <Link href="/users">
+                    <Link href="/articles">
                         <ListItem button>
                             <ListItemIcon>
-                                <PeopleAltIcon />
+                                <PagesSharpIcon />
                             </ListItemIcon>
                             <ListItemText
                                 className={classes.listItemText}
-                                primary="Users"
+                                primary="Articles"
                             />
                         </ListItem>
                     </Link>

@@ -155,3 +155,5 @@ documentation/website/build
 # editors
 .idea
 .vscode
+
+.env.local
