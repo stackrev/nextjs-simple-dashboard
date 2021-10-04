@@ -4,7 +4,9 @@ import { httpGet } from '@shared/services';
 
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import ArticleCard from 'components/article-card';
+import ArticleCard from 'components/articles/article-card';
+
+import { useAppDispatch, setArticles } from '@shared/store';
 
 const useStyles = makeStyles({
     root: {
@@ -43,6 +45,9 @@ export async function getServerSideProps(context) {
 }
 
 const Articles: FunctionComponent = (props: any) => {
+    const dispatch = useAppDispatch();
+    dispatch(setArticles(props.articles));
+
     const classes = useStyles();
     const { articles } = props;
 

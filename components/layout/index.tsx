@@ -13,11 +13,14 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
+import Badge from '@material-ui/core/Badge';
 
 import ImageIcon from '@material-ui/icons/Image';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PagesSharpIcon from '@material-ui/icons/PagesSharp';
 import LoginIcon from '@material-ui/icons/InputOutlined';
+
+import { rdxGetArticlesCount, useAppSelector } from '@shared/store';
 
 const drawerWidth = 220;
 const useStyles = makeStyles((theme) => ({
@@ -51,10 +54,17 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '0px',
         paddingBottom: '0px',
     },
+    badge: {
+        position: 'absolute',
+        right: '25px',
+        top: '25px',
+    },
 }));
 
 export default function Layout({ children }) {
     const classes = useStyles();
+
+    const articlesCount = useAppSelector(rdxGetArticlesCount);
 
     return (
         <div className={classes.root}>
@@ -111,10 +121,14 @@ export default function Layout({ children }) {
                             <ListItemIcon>
                                 <PagesSharpIcon />
                             </ListItemIcon>
-                            <ListItemText
-                                className={classes.listItemText}
-                                primary="Articles"
-                            />
+                            <ListItemText className={classes.listItemText}>
+                                Articles
+                                <Badge
+                                    className={classes.badge}
+                                    badgeContent={articlesCount}
+                                    color="primary"
+                                />
+                            </ListItemText>
                         </ListItem>
                     </Link>
 

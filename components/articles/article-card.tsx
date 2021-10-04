@@ -12,7 +12,7 @@ import { IArticle } from 'interfaces';
 import PropTypes from 'prop-types';
 import { CardMedia } from '@material-ui/core';
 
-declare type ArticleCardPropsType = {
+declare type ArticlePropsType = {
     article: IArticle;
 };
 
@@ -36,7 +36,7 @@ const useStyles = makeStyles({
 
 const ArticleCard: FunctionComponent = (props: any) => {
     const classes = useStyles();
-    const { article }: ArticleCardPropsType = props;
+    const { article }: ArticlePropsType = props;
 
     return (
         <Card className={classes.root}>
@@ -62,7 +62,9 @@ const ArticleCard: FunctionComponent = (props: any) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Learn More</Button>
+                <a href={article.url} target="_blank">
+                    <Button size="small">Read More</Button>
+                </a>
             </CardActions>
         </Card>
     );
